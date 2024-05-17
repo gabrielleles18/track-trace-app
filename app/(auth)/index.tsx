@@ -36,8 +36,8 @@ export default function LoginScreen() {
 
     return (
         <ThemedView style={styles.container}>
-            <NativeBaseProvider theme={theme}>
-                <Center w="100%" top='100'>
+            <NativeBaseProvider>
+                <Center w="100%" height='100%'>
                     <Box safeArea p="2" py="8" w="95%" maxW="380">
                         <Heading size="lg" fontWeight="600" color="coolGray.800" _dark={{
                             color: "warmGray.50"
@@ -81,20 +81,6 @@ export default function LoginScreen() {
                                     Entrar
                                 </Button>
                             </Link>
-                            <HStack mt="6" justifyContent="center">
-                                <Text fontSize="sm" color="coolGray.600" _dark={{
-                                    color: "warmGray.200"
-                                }}>
-                                    Sou um novo usuário.{" "}
-                                </Text>
-                                <LinkNativeBase _text={{
-                                    color: "indigo.500",
-                                    fontWeight: "medium",
-                                    fontSize: "sm"
-                                }} href="#">
-                                    Inscrever-se
-                                </LinkNativeBase>
-                            </HStack>
                         </VStack>
                     </Box>
                 </Center>
