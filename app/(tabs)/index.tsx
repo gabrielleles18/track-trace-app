@@ -4,6 +4,7 @@ import {Avatar, Box, FlatList, Heading, HStack, Icon, Input, Spacer, VStack, Tex
 import {MaterialIcons} from "@expo/vector-icons";
 import React from "react";
 import {TouchableOpacity} from "react-native";
+import {Link} from "expo-router";
 
 export default function HomeScreen() {
     const data = [{
@@ -71,77 +72,79 @@ export default function HomeScreen() {
                     showsVerticalScrollIndicator={false}
                     ListFooterComponent={() => <Box height={7}/>}
                     renderItem={({item}) =>
-                        <TouchableOpacity>
-                            <Box
-                                borderBottomWidth="1"
-                                _dark={{
-                                    borderColor: "muted.50"
-                                }}
-                                borderColor="muted.100"
-                                py="4"
-                                flexDirection="row"
-                                flex={1}
-                            >
+                        <Link href={'/delivery/' + item.id} asChild>
+                            <TouchableOpacity>
                                 <Box
-                                    width={'2'}
-                                    py={'2'}
-                                    borderRadius={'full'}
-                                    background={item.inTransit ? 'indigo.500' : 'coolGray.200'}
-                                    marginRight={'4'}
-                                />
-                                <HStack
-                                    space={[2, 3]}
-                                    justifyContent="space-between"
-                                    alignItems="center"
-                                    py={'2'}
+                                    borderBottomWidth="1"
+                                    _dark={{
+                                        borderColor: "muted.50"
+                                    }}
+                                    borderColor="muted.100"
+                                    py="4"
+                                    flexDirection="row"
                                     flex={1}
                                 >
-                                    <VStack
-                                        width={(100 - 20) + '%'}
+                                    <Box
+                                        width={'2'}
+                                        py={'2'}
+                                        borderRadius={'full'}
+                                        background={item.inTransit ? 'indigo.500' : 'coolGray.200'}
+                                        marginRight={'4'}
+                                    />
+                                    <HStack
+                                        space={[2, 3]}
+                                        justifyContent="space-between"
+                                        alignItems="center"
+                                        py={'2'}
                                         flex={1}
                                     >
-                                        <Text
+                                        <VStack
+                                            width={(100 - 20) + '%'}
+                                            flex={1}
+                                        >
+                                            <Text
+                                                _dark={{
+                                                    color: "warmGray.50"
+                                                }}
+                                                color="indigo.800"
+                                                fontSize={"sm"}
+                                                bold
+                                                marginBottom={'1'}
+                                            >
+                                                {item.fullName}
+                                            </Text>
+                                            <Text
+                                                fontSize={"lg"}
+                                                color="coolGray.800"
+                                                _dark={{
+                                                    color: "warmGray.200"
+                                                }}
+                                            >
+                                                {item.recentText}
+                                            </Text>
+                                            <Text
+                                                fontSize={"sm"}
+                                                color="coolGray.500"
+                                                _dark={{
+                                                    color: "warmGray.200"
+                                                }}
+                                            >
+                                                Av. T2 - Quadra 107, Lote 07 - Setor Bueno. Referência: Em frente ao
+                                                Hospital do Coração.
+                                            </Text>
+                                        </VStack>
+                                        <MaterialIcons
+                                            name="keyboard-arrow-right"
+                                            size={26}
+                                            color={'#858484'}
                                             _dark={{
                                                 color: "warmGray.50"
                                             }}
-                                            color="indigo.800"
-                                            fontSize={"sm"}
-                                            bold
-                                            marginBottom={'1'}
-                                        >
-                                            {item.fullName}
-                                        </Text>
-                                        <Text
-                                            fontSize={"lg"}
-                                            color="coolGray.800"
-                                            _dark={{
-                                                color: "warmGray.200"
-                                            }}
-                                        >
-                                            {item.recentText}
-                                        </Text>
-                                        <Text
-                                            fontSize={"sm"}
-                                            color="coolGray.500"
-                                            _dark={{
-                                                color: "warmGray.200"
-                                            }}
-                                        >
-                                            Av. T2 - Quadra 107, Lote 07 - Setor Bueno. Referência: Em frente ao
-                                            Hospital do Coração.
-                                        </Text>
-                                    </VStack>
-                                    <MaterialIcons
-                                        name="keyboard-arrow-right"
-                                        size={26}
-                                        color={'#858484'}
-                                        _dark={{
-                                            color: "warmGray.50"
-                                        }}
-                                    />
-                                </HStack>
-                            </Box>
-                        </TouchableOpacity>
+                                        />
+                                    </HStack>
+                                </Box>
+                            </TouchableOpacity>
+                        </Link>
                     }
                     keyExtractor={item => item.id}/>
             </Box>

@@ -40,15 +40,6 @@ export default function TabLayout() {
                     ),
                 }}
             />
-            <Tabs.Screen
-                name="delivery/index"
-                options={{
-                    title: 'Delivery',
-                    tabBarIcon: ({color, focused}) => (
-                        <TabBarIcon name={'car'} color={color}/>
-                    ),
-                }}
-            />
         </Tabs>
     );
 }

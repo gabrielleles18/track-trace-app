@@ -4,7 +4,7 @@ import React from "react";
 import {Actionsheet, Box, Button, Center, useDisclose, Text} from "native-base";
 
 
-export default function DeliveryScreen() {
+export function DeliveryScreen() {
     const {
         isOpen,
         onOpen,
