@@ -8,7 +8,6 @@ export default function LoginLayout() {
             screenOptions={{
                 headerShown: false,
             }}>
-
         </Stack>
     );
 }

@@ -36,55 +36,53 @@ export default function LoginScreen() {
 
     return (
         <ThemedView style={styles.container}>
-            <NativeBaseProvider>
-                <Center w="100%" height='100%'>
-                    <Box safeArea p="2" py="8" w="95%" maxW="380">
-                        <Heading size="lg" fontWeight="600" color="coolGray.800" _dark={{
-                            color: "warmGray.50"
-                        }}>
-                            Track<Text color='indigo.500' fontWeight='black'>&</Text>Trace
-                        </Heading>
-                        <Heading
-                            mt="0.5"
-                            _dark={{
-                                color: "warmGray.200"
-                            }}
-                            color="coolGray.600"
-                            fontWeight="extrabold"
-                            size="sm"
-                            borderLeftWidth={4}
-                            paddingLeft={2}
-                            borderLeftColor={"indigo.500"}
-                            borderRadius={2}
-                        >
-                            Motorista
-                        </Heading>
+            <Center w="100%" height='100%'>
+                <Box safeArea p="2" py="8" w="95%" maxW="380">
+                    <Heading size="lg" fontWeight="600" color="coolGray.800" _dark={{
+                        color: "warmGray.50"
+                    }}>
+                        Track<Text color='indigo.500' fontWeight='black'>&</Text>Trace
+                    </Heading>
+                    <Heading
+                        mt="0.5"
+                        _dark={{
+                            color: "warmGray.200"
+                        }}
+                        color="coolGray.600"
+                        fontWeight="extrabold"
+                        size="sm"
+                        borderLeftWidth={4}
+                        paddingLeft={2}
+                        borderLeftColor={"indigo.500"}
+                        borderRadius={2}
+                    >
+                        Motorista
+                    </Heading>
 
-                        <VStack space={3} mt="5">
-                            <FormControl>
-                                <FormControl.Label>Login</FormControl.Label>
-                                <Input/>
-                            </FormControl>
-                            <FormControl>
-                                <FormControl.Label>Senha</FormControl.Label>
-                                <Input type="password"/>
-                                <LinkNativeBase _text={{
-                                    fontSize: "xs",
-                                    fontWeight: "500",
-                                    color: "indigo.500"
-                                }} alignSelf="flex-end" mt="1">
-                                    Esqueceu sua senha?
-                                </LinkNativeBase>
-                            </FormControl>
-                            <Link href={'/explore'} asChild>
-                                <Button mt="2" colorScheme="indigo">
-                                    Entrar
-                                </Button>
-                            </Link>
-                        </VStack>
-                    </Box>
-                </Center>
-            </NativeBaseProvider>
+                    <VStack space={3} mt="5">
+                        <FormControl>
+                            <FormControl.Label>Login</FormControl.Label>
+                            <Input/>
+                        </FormControl>
+                        <FormControl>
+                            <FormControl.Label>Senha</FormControl.Label>
+                            <Input type="password"/>
+                            <LinkNativeBase _text={{
+                                fontSize: "xs",
+                                fontWeight: "500",
+                                color: "indigo.500"
+                            }} alignSelf="flex-end" mt="1">
+                                Esqueceu sua senha?
+                            </LinkNativeBase>
+                        </FormControl>
+                        <Link href={'/profile'} asChild>
+                            <Button mt="2" colorScheme="indigo">
+                                Entrar
+                            </Button>
+                        </Link>
+                    </VStack>
+                </Box>
+            </Center>
         </ThemedView>
     );
 }
