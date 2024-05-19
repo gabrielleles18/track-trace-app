@@ -10,31 +10,30 @@ export default function DeliveryScreen() {
         isOpen,
         onOpen,
         onClose
-    } = useDisclose();
+    } = useDisclose(true);
 
     const {id} = useLocalSearchParams();
 
-    console.log(id);
 
     return (
         <SafeAreaView>
-            <Text>Delivery Screen Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est exercitationem facilis
-                nihil provident reiciendis ut voluptatibus. Ab adipisci architecto assumenda, distinctio, dolor dolore
-                iste, nam natus obcaecati odit recusandae totam?</Text>
-            {/*<ThemedView style={styles.container}>*/}
-            {/*    <Center>*/}
-            {/*        <Actionsheet isOpen={isOpen} onClose={onClose}>*/}
-            {/*            <Actionsheet.Content>*/}
-            {/*                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at autem debitis*/}
-            {/*                delectus*/}
-            {/*                dicta eius est eum, exercitationem facere facilis ipsam maxime molestias quae similique*/}
-            {/*                sint,*/}
-            {/*                soluta unde ut, vero!*/}
-            {/*            </Actionsheet.Content>*/}
-            {/*        </Actionsheet>*/}
-            {/*    </Center>*/}
-            {/*    <Text>Delivery Screen</Text>*/}
-            {/*</ThemedView>*/}
+            <ThemedView style={styles.container}>
+                <Center>
+                    <Actionsheet
+                        isOpen={isOpen}
+                        onClose={onClose}
+                        disableOverlay
+                    >
+                        <Actionsheet.Content>
+                            <Actionsheet.Item>Delete</Actionsheet.Item>
+                            <Actionsheet.Item>Share</Actionsheet.Item>
+                            <Actionsheet.Item>Play</Actionsheet.Item>
+                            <Actionsheet.Item>Favourite</Actionsheet.Item>
+                            <Actionsheet.Item>Cancel</Actionsheet.Item>
+                        </Actionsheet.Content>
+                    </Actionsheet>
+                </Center>
+            </ThemedView>
         </SafeAreaView>
     );
 }

@@ -5,9 +5,25 @@ import React from "react";
 import {Avatar, Box, CheckIcon, Heading, HStack, Text, VStack} from "native-base";
 import {TouchableOpacity} from "react-native";
 import {Ionicons} from '@expo/vector-icons';
+import {useQuery} from "react-query";
+import {getUser} from "@/app/(app)/(tabs)/profile/teste";
 
 
 export default function ProfileScreen() {
+    const [refreshing, setRefreshing] = React.useState(false);
+    const [vaibater, setVaibater] = React.useState(false);
+
+    const {
+        data: user,
+        isLoading: isLoadingUser,
+        error: errorUser,
+    } = useQuery({
+        queryKey: ['driver', refreshing, vaibater],
+        queryFn: () => getUser(),
+    });
+
+    console.log(errorUser);
+
     return (
         <ThemedView style={styles.container}>
             <HStack pl="4" space={'xs'} alignItems='center'>
@@ -34,7 +50,7 @@ export default function ProfileScreen() {
                 </HStack>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => setVaibater(!vaibater)}>
                 <HStack space={1.5} pl="4" mt='3' alignItems={'center'}>
                     <Ionicons name="notifications-sharp" size={18} color="gray.700"/>
                     <Text color="gray.700" fontSize="md">
