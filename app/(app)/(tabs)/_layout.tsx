@@ -4,8 +4,6 @@ import React from 'react';
 import {TabBarIcon} from '@/components/navigation/TabBarIcon';
 import {Colors} from '@/constants/Colors';
 import {useColorScheme} from '@/hooks/useColorScheme';
-import Ionicons from "@expo/vector-icons/Ionicons";
-import {Feather} from "@expo/vector-icons";
 
 export default function TabLayout() {
     const colorScheme = useColorScheme();
@@ -21,9 +19,11 @@ export default function TabLayout() {
                 tabBarLabelStyle: {
                     marginBottom: 6,
                 }
-            }}>
+            }}
+
+        >
             <Tabs.Screen
-                name="index"
+                name="home"
                 options={{
                     title: 'Entregas',
                     tabBarIcon: ({color, focused}) => (
@@ -32,7 +32,7 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
-                name="profile/index"
+                name="profile"
                 options={{
                     title: 'Conta',
                     tabBarIcon: ({color, focused}) => (

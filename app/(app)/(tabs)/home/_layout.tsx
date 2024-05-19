@@ -1,14 +1,12 @@
 import {Stack} from "expo-router";
 import React from "react";
 
-export default function DeliveryLayout() {
+export default function ProfileLayout() {
     return (
         <Stack
             screenOptions={{
                 headerShown: false,
-            }}
-
-        >
+            }}>
         </Stack>
     );
 }
