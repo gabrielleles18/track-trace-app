@@ -32,6 +32,15 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
+                name="record"
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({color, focused}) => (
+                        <TabBarIcon name={'atlassian'} color={color}/>
+                    ),
+                }}
+            />
+            <Tabs.Screen
                 name="profile"
                 options={{
                     title: 'Conta',

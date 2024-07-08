@@ -75,7 +75,7 @@ export default function LoginScreen() {
                                 Esqueceu sua senha?
                             </LinkNativeBase>
                         </FormControl>
-                        <Link href={'/home'} asChild>
+                        <Link href={'/record'} asChild>
                             <Button mt="2" colorScheme="indigo">
                                 Entrar
                             </Button>
